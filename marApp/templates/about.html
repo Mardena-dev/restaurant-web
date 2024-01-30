@@ -1,0 +1,10 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<h1>About page</h1>
+{% for staff in all %}
+<p>Staff name: {{staff.staff_name}}; Staff surname: {{staff.staff_surname}}; Staff position: {{staff.staff_position}};
+    Staff email: {{staff.staff_email}}
+</p>
+{% endfor %}
+{% endblock %}

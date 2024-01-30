@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--lidhja me bootstrap-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!--lidhja me css-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+    {% block content %}
+
+    {% endblock %}
+    {% include 'base/footer.html' %}
+
+    <!--JS bootstrap-->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!--JS-->
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
