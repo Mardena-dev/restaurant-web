@@ -1,0 +1,33 @@
+{% extends 'base/index2.html' %}
+{% block content %}
+
+<br>
+
+    <div class="header">
+      <p class="logo">Mystic</p>
+      <div class="cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <p id="count">0</p>
+      </div>
+  </div>
+  <div class="container">
+      <div id="root"></div>
+      <div class="sidebar">
+          <div class="head"><p>My Order</p></div>
+          <div id="cartItem">No order yet</div>
+          <div class="foot">
+              <h3>Total</h3>
+              <h2 id="total">$0.00</h2>
+          </div>
+          <div>
+                <a href="https://www.paypal.com/signin/?returnUrl=%2Fbuttons%2Fsmart%3FflowloggingId%3Df2199497a7592"><button id="paypalButton">
+                    <p class="pay" style="color:  rgb(2, 2, 82); font-weight: 900; font-size: x-large;">Pay</p>
+                    <p class="pal" style="color:white; font-weight: 900; font-size: x-large;">Pal</p>
+                </button></a></div>
+      </div>
+  </div>
+  <script src="addToCart.js"></script>
+
+
+
+    {% endblock %}

@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --black: #333;
+    --light-color: #cdaa7c;
+    --box-shadow: 0.5rem 1.5 rem rgba(0,0,0,.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lato', sans-serif;
+    font-size: 18px;
+}
+/* media query start */
+@media screen and (max-width:500px){
+    html{
+        font-size:55%;
+    }
+    .box{
+        display: block !important;
+        margin-bottom: 20px;
+    }
+    #root{
+        display: block !important;
+    }
+    #paypalButton{
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .head{
+       padding: 2px !important;
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:1000px){
+    html{
+        font-size:55%;
+    }
+    .box{
+       
+        margin-bottom: 20px;
+    }
+    #root{
+       display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #paypalButton{
+        width: 100% !important;
+        padding: 0 30% !important;
+    }
+ 
+    .head{
+       padding: 2px !important;
+    }
+}
+/* media query end */
+body{
+    font-size: 10px !important;
+}
+.header{
+    height: 80px;
+    width: 90%;
+    min-width: 195px;
+    background-color:#333;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.header .logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: aliceblue;
+}
+.cart{
+    display: flex;
+    background-color:white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+}
+.fa-solid{
+    color: #333;
+}
+.cart p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: #333;
+    color: white;
+}
+.container{
+    display: flex;
+    width: 90%;
+    
+    margin-bottom: 30px;
+}
+#root{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.sidebar{
+    width: 40%;
+    min-width: 110px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+}
+.head{
+    background-color: #333;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color:white;
+    display: flex;
+    align-items: center;
+}
+.foot{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    min-width: 150px;
+    overflow: hidden;
+    min-height: 350px;
+   
+}
+#paypalButton{
+    display: flex;
+    border-radius: 5px;
+    background-color: #f1ab09;
+    padding: 3px 40%;
+    cursor: pointer;
+    color: white;
+    width:100%;
+   
+}
+#paypalButton:hover{
+    background-color: #f1ab09;
+}
+
+.img-box{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images{
+    max-width: 90%;
+    max-height: 75%;
+    object-fit: cover;
+    object-position: center;
+}
+.bottom{
+    margin: 0px;
+    width: 100%;
+    min-width: 60px;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+h2{
+    font-size: 20px;
+    color:#333;
+}
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+}
+.button:before{
+    content: '';
+    width:100%;
+    height:100%;
+    background: var(--light-color);
+    z-index: -1;
+    position:absolute;
+    top:0;
+    left:-100%;
+    transition:.4s;
+}
+button:hover{
+    background-color: #cdaa7c;
+    color: white;
+    transition: from le;
+}
+.button:hover.btn:before{
+    left: 0;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+border-radius: 50%;
+}
+.fa-trash:hover{
+    cursor: pointer;
+    color:#cdaa7c;
+    transition: 0.4s;
+}

@@ -2,58 +2,242 @@
 {% load static %}
 {% block content %}
 
-
-<!--nis carousel-->
-<div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'images/c1.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/c2.webp' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/c3.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/c4.webp' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/c22.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-<!--fund carousel-->
-<h1>At home Cake recipes</h1>
-<!--info allItems-->
-<div class="container">
-  <div class="row">
-    {% for i in all %}
-      <div class="col-12 ,col-md-6 mb-3">
-        <div class="card" >
-          <img src="{{i.item_image.url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{i.staff_name}} <br> {{i.staff_surname}} <br> {{i.staff_position}}
-            <br> {{i.staff_email}}</h5>
-
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{% url 'detailPage' i.pk %}" class="btn btn-primary">Go somewhere</a>
+<!-- head section start -->
+<div class="home" id="home">
+  <div class="home-slider">
+      <div class="wrapper">
+          <div class="slide">
+           
+              <div class="content">
+                  <img src="{% static 'images/logo1.png' %}" width="200" height="=200">
+                  <h1>Mystic</h1>
+                  <p><q><i>Ignite elegance in your senses.</i></q></p>
+                  <a href="{% url 'reservationPage' %}" class="btn">Book my table</a>
+              </div>
           </div>
-        </div>
       </div>
-    {% endfor %}
   </div>
 </div>
+<!-- head section end -->
+
+<!-- Welcome section start -->
+<section>
+    <div class="welcome" id="idk">
+        <div class="wel-content">
+            <div class="img1">
+                <video autoplay loop class="vid" style="width: auto; height: 85vh;"  >
+                <source src="{% static 'images/welcome-vid.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="img3">
+                <img src="{% static 'images/res2.1.jpg' %}" style="width: auto; height: 85vh;">
+            </div>
+        </div>
+        <div class="wel-text">
+            <h1>Welcome To Mystic</h1>
+            <p class="wel-description">Welcome to Mystic, where culinary delight meets warm hospitality. Step into a haven of flavors, where each dish is crafted with passion and precision. Our chefs use only the finest, locally sourced ingredients to create a menu that caters to diverse palates. Whether you're seeking a casual brunch or a sophisticated dinner, our inviting ambiance and attentive staff ensure an unforgettable dining experience. Join us in savoring the artistry of food and the joy of shared moments at Mystic.</p>
+        </div>
+    </div>
+</section>
+<!-- Welcome section end -->
+
+<!-- About section start -->
+    <div class="about">
+        <div class="deco-image">
+            <img src="{% static 'images/res3.jpg' %}" alt="" style="width: auto; height: 100vh;">
+        </div>
+        <div class="part">
+            <h1 class="aboutUs">About us</h1>
+            <p class="text">Join us and surrender to the allure of luxury and mystery. Your journey into culinary decadence begins here, where each moment is an invitation to indulge in the extraordinary.</p>
+        </div>
+
+    </div>
+<!-- About section end -->
+
+<!-- menu section start -->
+<section class="our-menu" id="menu">
+    <h1 class="heading">Our Food &nbsp<a href="{% url 'menuPage' %}" class="heading">Menu</a></h1>
+    <center><h3 class="sub-heading">~ Sneak peek at our menu ~</h3></center>
+    
+    <div class="menu-container">
+        <div class="item">
+            <div class="item-name">
+                <h2>Salads</h2>
+            </div>
+  
+            <div class="item-body">
+                <div class="item-menu">
+                    <h3>Fruity winter salad</h3>
+                    <span class="dots"></span>
+                    <h3>$10</h3>
+  
+                    <ul>
+                        <li>apple/</li>
+                        <li>honey/</li>
+                        <li>pomegrade/</li>
+                        <li>avocado</li>
+                    </ul>
+                </div>
+  
+  
+                <div class="item-menu">
+                    <h3>Farro salad with pear & hazelnuts</h3>
+                    <span class="dots"></span>
+                    <h3>$10</h3>
+  
+                    <ul>
+                        <li>baby arugula/</li>
+                        <li>pear/</li>
+                        <li>farro/</li>
+                        <li>roasted hazelnuts</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+  
+    <div class="item">
+        <div class="item-name">
+            <h2>Soups</h2>
+        </div>
+  
+        <div class="item-body">
+            <div class="item-menu">
+                <h3>Hungarian mushroom soup</h3>
+                <span class="dots"></span>
+                <h3>$15</h3>
+  
+                <ul>
+                    <li>crimini mushrooms/</li>
+                    <li>onions/</li>
+                    <li>thyme/</li>
+                    <li>dill</li>
+                </ul>
+            </div>
+  
+  
+            <div class="item-menu">
+                <h3>Creamy wild nettle soup</h3>
+                <span class="dots"></span>
+                <h3>$15</h3>
+  
+                <ul>
+                    <li>nettles/</li>
+                    <li>potatoes/</li>
+                    <li>olive oil/</li>
+                    <li>honey</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  
+    <div class="item">
+        <div class="item-name">
+            <h2>Main Course</h2>
+        </div>
+  
+        <div class="item-body">
+            <div class="item-menu">
+                <h3>Maremma duck with radicchio</h3>
+                <span class="dots"></span>
+                <h3>$25</h3>
+  
+                <ul>
+                    <li>duck/</li>
+                    <li>raddicchio/</li>
+                    <li>black garlic/</li>
+                    <li>aged mirin</li>
+                </ul>
+            </div>
+  
+  
+            <div class="item-menu">
+                <h3>Grilled octopus over squid ink pasta</h3>
+                <span class="dots"></span>
+                <h3>$17</h3>
+  
+                <ul>
+                    <li>baby octopus/</li>
+                    <li>bacon/</li>
+                    <li>suqid ink spaghetti/</li>
+                    <li>tomato sauce</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  
+  <div class="item">
+    <div class="item-name">
+        <h2>Deserts</h2>
+    </div>
+  
+    <div class="item-body">
+        <div class="item-menu">
+            <h3>Lavo Cannoli</h3>
+            <span class="dots"></span>
+            <h3>$20</h3>
+  
+            <ul>
+                <li>sweetened riccota cheese/</li>
+                <li>sugar/</li>
+                <li>vanilla/</li>
+                <li>candied fruit</li>
+            </ul>
+        </div>
+  
+  
+        <div class="item-menu">
+            <h3>Avocado ice cream</h3>
+            <span class="dots"></span>
+            <h3>$20</h3>
+  
+            <ul>
+                <li>banana/</li>
+                <li>avocado/</li>
+                <li>lime/</li>
+                <li>coconut milk</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  </div>
+  </section>
+<!-- menu section end -->
+
+<!-- contact section start -->
+<section>
+    <div class="contact">
+            <iframe class="map"
+                width="500px"
+                height="500px"
+                frameborder="1"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1946.8649072591622!2d19.8185122!3d41.3277299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13501d17b607d82d%3A0x4aebf74bbfc9fcd4!2sSkanderbeg%20Square!5e0!3m2!1sen!2sus!4vYOUR_EMBED_API_KEY"
+                allowfullscreen>
+            </iframe>
+            <div class="contact-info">
+                <h1>Contact Us</h1>
+                <p><span class="material-symbols-outlined">
+                    schedule
+                    </span>  MON-SUN 10.00 - 00.00</p>
+                <p><span class="material-symbols-outlined">
+                    location_on
+                    </span>  SKANDERBEG SQUARE</p>
+                <p><span class="material-symbols-outlined">
+                    smartphone
+                    </span>  +355 06X 12 34 567</p>
+                <p><span class="material-symbols-outlined">
+                    alternate_email
+                    </span>  mystic@email.com</p>
+        </div>
+    </div>
+    
 
 
-<!--fund info allItems-->
+</section>
+<!-- contact section end -->
 
 {% endblock %}

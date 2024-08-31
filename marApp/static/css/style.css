@@ -1,17 +1,529 @@
-*{
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+:root {
+    --black: #333;
+    --light-color: #cdaa7c;
+    --box-shadow: 0.5rem 1.5 rem rgba(0, 0, 0, .1);
 }
 
-body{
-    background-color: rgb(241, 189, 241);
-    font-family: 'Times New Roman';
+* {
+    /* font-family: 'Lato', sans-serif; */
+    margin: 0px;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: auto;
+    scroll-behavior: smooth;
+
+}
+
+/*media query*/
+@media screen and (max-width:500px) {
+    html {
+        font-size: 55%;
+    }
+
+    /*  head section start  */
+    .home .home-slider .wrapper .slide .content {
+        flex-direction: column;
+    }
+    .home .home-slider .slide .content img{
+        margin-left: 0px !important;
+           padding-left: 0px !important;
+        }
+    .home .home-slider .wrapper .slide .content h1{
+        padding: 0 !important;
+        
+    }
+    .home .home-slider .wrapper .slide .content .logoja{
+        margin-left: 0;
+    }
+
+    .home .home-slider .wrapper .slide .content p {
+        font-size: 20px;
+    }
+
+    .home .home-slider .wrapper .slide .content a {
+        align-items: center;
+        border-width: 1px 40px;
+    }
+
+    /*  head section end  */
+
+    /* Welcome section start */
+    .welcome {
+        height: 70vh;
+        margin-bottom: 120px;
+    }
+
+    .welcome .wel-content .vid,
+    .welcome .wel-content .img3 {
+        display: none;
+    }
+
+    /* Welcome section end */
+
+    /* About section start */
+    .about {
+        position: relative;
+    }
+
+    .about .part {
+        display: block;
+        padding:0 0 0 0 !important;
+    }
+
+    .about .deco-image {
+        color: white;
+        display: flex !important;
+        align-self: flex-start !important;
+        text-align: left;
+    }
+
+    .about .part .aboutUs,
+    .about .part .text {
+        float: left;
+        margin-left: 0 !important;
+    }
+
+    .about .part .text {
+        font-size: 18px;
+        width: 52%;
+        padding: 0px 0 0 0px !important;
+    }
+
+    .about .part .aboutUs {
+        padding: 0 !important;
+        font-size: 50px;
+    }
+
+    /* About section end */
+
+    /* menu section start */
+    .our-menu .menu-container {
+        grid-template-columns: repeat(auto-fit, (2rem, 20fr));
+    }
+
+    .our-menu .menu-container .item {
+        width: 270px;
+    }
+
+    /* menu section end */
+
+    /* contact section start */
+    .contact .map {
+        width: 100vh;
+        height: auto;
+    }
+
+    /* contact section end */
+
+    /* contact section start */
+    .contact {
+        display: block !important;
+        position: relative;
+    }
+
+    .contact .contact-info {
+        padding: 0 0 0 50px !important;
+        margin: 30px 0 30px 0 !important;
+
+    }
+
+    /* contact section end */
+
+    /* reservation section start */
+    .reservation .form {
+        background: #181818;
+        opacity: 85% !important;
+        height: 100% !important;
+    }
+
+    .reservation .image {
+        height: 100% !important;
+    }
+
+    .reservation .form h1 {
+        font-size: 40px !important;
+    }
+
+    .reservation .form h3 {
+        font-size: 20px !important;
+    }
+
+    /* reservation section end */
+
+}
+/* media query end */
+
+
+/*slider style start*/
+.home .home-slider .slide {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.home .home-slider .wrapper .slide {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(../images/res2.jpg);
+    background-size: cover;
+}
+
+.home .home-slider .wrapper .slide .content {
+    padding-left: 9rem;
+}
+
+
+.home .home-slider .slide .content h1 {
+    color: var(--light-color);
+    font-family: "Tangerine", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 10rem;
+    line-height: 4.5rem;
+    padding-left: 70px;
+}
+
+.home .home-slider .slide .content p {
+    color: #fff;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 100 !important;
+    padding: 1rem 1;
+    line-height: 5.5rem;
+
+}
+
+.home .home-slider .slide .content img{
+margin-left: 100px;
+   padding-left: 0px !important;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: flex;
+    align-self: center;
+    font-size: 1.7rem;
+    color: #fff;
+    border-width: 1px 90px;
+    background: transparent;
+    cursor: pointer;
+    padding: .8rem 15%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-weight: normal;
+}
+
+#btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    border: .1rem solid rgba(205, 170, 124, 0.2);
+    background: transparent;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--light-color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: .5s;
+}
+
+#btn1:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--light-color);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: .5s;
+}
+
+.btn:hover.btn:before {
+    left: 0;
+}
+
+#btn1:hover.btn1:before {
+    left: 0;
+}
+
+/* slider style ends */
+
+/*welcome style start*/
+.welcome {
+    display: inline-block;
+}
+
+.welcome .wel-content {
+    display: inline-block;
+    float: right;
+    height: 100vh;
+
+}
+
+.welcome .wel-content .img1 {
+    float: right;
+}
+
+.welcome .wel-content .img3 {
+    float: left;
+    margin: 0 30px;
+    padding-top: 50px;
+}
+
+.welcome .wel-text {
+    padding: 120px 30px;
+}
+
+.welcome .wel-text h1 {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 6rem;
+}
+
+.welcome .wel-text p {
+    border-width: 100px;
+    font-size: medium;
+}
+
+/*welcome style ends*/
+
+/* about us style start */
+.about {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.about .part {
+    display: block;
+    float: right;
+    padding: 0 0 0 70px ;
+    margin: 0 !important;
+}
+
+.about .part h1,
+.about .part p {
+    display: block;
+    width: 40%;
+    margin: 0;
+    text-align: center;
+}
+
+.about .part h1 {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 8rem;
+    width: 400px;
+    padding: 90px 0 50px 150px !important;
+}
+
+.about .part p {
+    font-size: 2.5rem;
+    width: 450px;
+    padding: 0px 0px 0 120px !important;
+
+}
+
+.about .deco-image {
+    display: flex;
+    width: 50%;
+    float: left;
+}
+
+/* about us style end */
+
+/*menu style starts*/
+.our-menu {
+    background: url(../images/ourmenu2.jpg) left top no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 30px 100px;
+    align-content: center;
+
+}
+
+.our-menu .heading {
+    color: #e5e5e5;
+}
+
+.our-menu .heading {
+    text-align: center;
+    font-size: 5rem;
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.our-menu .sub-heading {
+    color: #cdaa7c;
+    font-size: x-large;
+    text-transform: capitalize;
+}
+
+.our-menu a {
+    color: #e5e5e5;
+    text-decoration: none;
+}
+
+.our-menu a:hover {
+    color: #cdaa7c;
+    text-decoration: none;
+}
+
+.our-menu .menu-container {
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 50rem));
+    align-content: center;
+}
+
+.our-menu .menu-container .item .item-name h2 {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin-top: .5rem;
+    color: #e5e5e5
+}
+
+.our-menu .menu-container .item .item-menu h3 {
+    font-size: 1.8rem;
+    color: #e5e5e5;
+    font-weight: 200;
+    display: inline-block;
+}
+
+.our-menu .menu-container .item .item-menu span {
+    width: 35%;
+    display: inline-block;
+    border: 1px dotted #e5e5e5;
+}
+
+.our-menu .menu-container .item .item-menu ul {
+    display: flex;
+    font-size: 1.5rem;
+    list-style: none;
+    padding: .8rem 0;
+    font-weight: 200;
+}
+
+.our-menu .menu-container .item .item-menu ul li {
+    color: #b9b9b9;
+}
+
+/* menu style ends */
+
+/* contact style starts */
+.contact {
+    display: flex;
+}
+
+.contact .contact-info {
+    display: block;
+    width: 250px;
+    margin: 100px 190px;
+    align-items: center;
+}
+
+.contact .contact-info h1 {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 8rem;
+    width: 400px;
+}
+
+.contact .contact-info p {
+    font-size: 2rem;
+}
+
+/* contact style ends */
+
+/*reservation style start*/
+.reservation {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+}
+
+.reservation .image {
+    background: url(../images/reservation.jpg);
+    height: 100vh;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: top 0;
+}
+
+.reservation .form {
+    background: #181818;
+    width: 50%;
+    height: 100vh;
+    padding: 6%;
+    align-content: center;
+    margin: 0;
+}
+
+.reservation .form h1,
+.reservation .form h3 {
+    font-family: "Tangerine", cursive !important;
+    font-weight: 700;
+    font-style: normal;
+    color: #cdaa7c !important;
+    text-align: center;
     
 }
-.carousel-inner,
-.carousel-inner img{
-    height: 400px;
 
-    object-fit: cover;
-   
+.reservation .form-holder {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap:2 rem;
+    width: 100%;
+    align-items: center;
 }
+
+.reservation .form form input,
+.reservation .form form select,
+.reservation .form .btn12 {
+    display: block;
+    margin: 2rem 0;
+    width: 100%;
+    background: none;
+    border-bottom: .1rem solid #b7b3b3;
+    color: #b7b3b3;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-decoration: none;
+    opacity: 85%;
+}
+
+.reservation .form form input:placeholder {
+    color: #b7b3b3;
+}
+
+/*reservation style end*/

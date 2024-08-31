@@ -7,10 +7,33 @@ def home(request):
     context={"all":allItem}
     return render(request, 'home.html', context)
 
-def about(request):
+# def about(request):
     allStaff = Staff.objects.all()
     context={"all":allStaff}
     return render(request, 'about.html', context)
+
+def reservation(request):
+    if request.method=="POST":
+        #marrja e informacioneve nga input
+        name = request.POST['name_reservation']
+        email = request.POST['email_reservation']
+        time = request.POST['time_reservation']
+        date = request.POST['date_reservation']
+        people = request.POST['people_reservation']
+        phone = request.POST['phone_reservation']
+        #kalimi ne databaze
+        Reservation(
+            reservation_name = name,
+            reservation_time = time,
+            reservation_date = date,
+            reservation_email = email,
+            reservation_people = people,
+            reservation_phone = phone
+            
+        ).save()
+    return render(request, 'reservation.html')
+
+
 
 def contact(request):
     if request.method=="POST":
@@ -27,7 +50,7 @@ def contact(request):
             contact_email = email
             
         ).save()
-    return render(request, 'contact.html')
+    return render(request, 'menu.html')
 
 def detail(request, id):
     detailItem = Item.objects.get(pk=id)
